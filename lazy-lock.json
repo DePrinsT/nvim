@@ -1,6 +1,7 @@
 {
+  "indent-blankline.nvim": { "branch": "master", "commit": "04e44b09ee3ff189c69ab082edac1ef7ae2e256c" },
   "lazy.nvim": { "branch": "main", "commit": "b1134ab82ee4279e31f7ddf7e34b2a99eb9b7bc9" },
-  "lualine.nvim": { "branch": "master", "commit": "640260d7c2d98779cab89b1e7088ab14ea354a02" },
+  "lualine.nvim": { "branch": "master", "commit": "2a5bae925481f999263d6f5ed8361baef8df4f83" },
   "nvim-web-devicons": { "branch": "master", "commit": "19d257cf889f79f4022163c3fbb5e08639077bd8" },
-  "onedarkpro.nvim": { "branch": "main", "commit": "6e0016ef3e3df1a4bb30821524b814b53c1e8bf7" }
+  "onedarkpro.nvim": { "branch": "main", "commit": "c28a6492cfd8752168abfa60ce39d1fc50862b0f" }
 }
