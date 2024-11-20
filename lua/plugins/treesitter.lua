@@ -11,7 +11,7 @@ return {
 						ensure_installed = { "python", "fortran", "c", "cpp", "vim", "vimdoc", "html" },  -- must have installed parsers
 						sync_install = false, auto_install = true,  -- automatically install missing parser when entering buffer
 						highlight = { enable = true }, -- activate highlighting
-						indent = { enable = true },  -- activate indentation based on treesitter
+						indent = { enable = false },  -- activate indentation based on treesitter (let other plugins handle this)
 				})
 		end
 }

@@ -32,4 +32,9 @@ require("lazy").setup({
   install = { colorscheme = { "onedark" } },
   -- automatically check for plugin updates
   checker = { enabled = false },
+  -- edit defaults
+  defaults = {
+    lazy = false,
+    version = false,
+  }
 })
