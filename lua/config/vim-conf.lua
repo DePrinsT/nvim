@@ -29,11 +29,16 @@ vim.g.mapleader = " " -- set leader to space
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- shortcut to get to file explorer
 
 -- some telescope shortcuts
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+local tel_builtin = require('telescope.builtin')
+local tel_actions = require('telescope.actions')
+vim.keymap.set('n', '<leader>ff', tel_builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fr', tel_builtin.oldfiles, { desc = 'Telescope find recent files' }) 
+vim.keymap.set('n', '<leader>fb', tel_builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fc', tel_builtin.grep_string, { desc = 'Telescope grep for string under cursor' })
+vim.keymap.set('n', '<leader>fg', tel_builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fh', tel_builtin.help_tags, { desc = 'Telescope help tags' })
+-- NOTE: there are some other keymaps which are specified in the mappings
+-- in the telescope.lua file instead
 
 -- use J and K to move up and down selected lines in visual mode. Also adapts indentation accordingly :)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
