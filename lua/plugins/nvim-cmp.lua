@@ -46,8 +46,9 @@ return {
             -- activate sources for autocompletion
             -- Note: order of sources does denote priority of recommendations
             sources = cmp.config.sources({
+                { name = "nvim_lsp" },
                 { name = "luasnip" }, -- snippets
-                { name = "buffer" }, -- text within current buffer
+--                { name = "buffer" }, -- text within current buffer
                 { name = "path" }, -- file system paths
             }),
         })
