@@ -16,10 +16,10 @@ return {
 						always_divide_middle = true,
 						always_show_tabline = true,
 						globalstatus = false,
-						refresh = {
-								statusline = 1000,
-								tabline = 1000,
-								winbar = 1000,
+						refresh = { -- refresh rates in ms
+								statusline = 50,
+								tabline = 50,
+								winbar = 50,
 						}
 				},
 				sections = {

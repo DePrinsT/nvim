@@ -44,6 +44,13 @@ return {
         lspconfig["pyright"].setup({
             capabilities = cmp_capabilities,
             on_attach = on_attach,
+            settings = {
+                python = {
+                    analysis = {
+                        typeCheckingMode="off"
+                    }
+                }
+            }
         })
 
         lspconfig["fortls"].setup({
