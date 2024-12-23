@@ -3,5 +3,5 @@
 -- asking for a new name of a variable).
 return {
     "stevearc/dressing.nvim",
-    event = "VeryLazy", -- load this plugin later only when called upon
+    event = "VeryLazy", -- load this plugin later only when called upon (i.e. when UI elements are called)
 }

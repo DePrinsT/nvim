@@ -24,6 +24,9 @@ vim.cmd("set incsearch") -- activate incremental search
 
 -- !!! KEYBINDINGS AND REMAPS !!!
 
+-- Note: the LSP keymaps are defined in the lspconfig.lua file
+-- these are only activated if an LSP actually attaches to the open buffer
+
 -- some general master settings
 vim.g.mapleader = " " -- set leader to space
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- shortcut to get to file explorer
@@ -39,6 +42,12 @@ vim.keymap.set("n", "<leader>fc", tel_builtin.grep_string, { desc = "Telescope g
 vim.keymap.set("n", "<leader>fh", tel_builtin.help_tags, { desc = "Telescope help tags" })
 -- NOTE: there are some other keymaps which are specified in the mappings
 -- in the telescope.lua file instead (though these are only used inside telescope itself)
+--
+-- open lazygit
+vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>", {desc = "LazyGit"}) 
+
+-- use leader bd to delete current buffer
+vim.keymap.set("n", "<leader>bd", vim.cmd.bd) -- delete current buffer
 
 -- use J and K to move up and down selected lines in visual mode. Also adapts indentation accordingly :)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

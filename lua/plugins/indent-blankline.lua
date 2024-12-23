@@ -4,4 +4,9 @@ return {
 		---@module "ibl"
 		---@type ibl.config
 		opts = {},
+		config = function()
+			local ibl = require("ibl")
+
+			ibl.setup()
+		end
 }
