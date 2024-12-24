@@ -6,9 +6,8 @@ return {
 
 		onedark.setup({
 			style = "dark",
-			transparent = true, -- theme transparency
+			transparent = false, -- theme transparency
 		})
 		onedark.load() -- load the theme
-	end
-
+	end,
 }

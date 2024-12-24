@@ -19,7 +19,7 @@ return {
             vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", { desc = "Show LSP definitions", noremap = true, silent = true }) -- show lsp definitions
             vim.keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", { desc = "Show LSP implementations", noremap = true, silent = true }) -- show lsp implementations
             vim.keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", { desc = "Show LSP type definitions", noremap = true, silent = true }) -- show lsp type definitions
-            vim.keymap.set({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action, { desc = "Show LSP type definitions", noremap = true, silent = true }) -- show lsp type definitions
+            vim.keymap.set({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action, { desc = "Show available code actions", noremap = true, silent = true }) -- show available code actions 
             vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Smart rename", noremap = true, silent = true }) -- smart rename
             vim.keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", { desc = "Show buffer diagnostics", noremap = true, silent = true }) -- Show buffer diagnostics
             vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show line diagnostics", noremap = true, silent = true }) -- Show line diagnostics

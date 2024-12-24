@@ -29,5 +29,5 @@ return {
             -- auto-install configured servers (previously configured with lspconfig)
             automatic_installation = true, -- not the same as ensure_installed
         })
-    end
+    end,
 }
