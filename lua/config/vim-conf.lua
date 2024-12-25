@@ -22,6 +22,9 @@ vim.cmd("set relativenumber") -- set relative line numbers
 vim.cmd("set nohlsearch") -- deactivate highlighting when searching
 vim.cmd("set incsearch") -- activate incremental search
 
+-- MISCELLANEOUS SETTINGS --
+vim.cmd("set formatoptions-=cro") -- do not automatically make nextline a comment when writing a comment
+
 -- !!! KEYBINDINGS AND REMAPS !!!
 
 -- Note: the LSP keymaps are defined in the lspconfig.lua file
