@@ -2,3 +2,4 @@
 require("config.lazy")
 -- load in other neovim configurations
 require("config.vim-conf")
+

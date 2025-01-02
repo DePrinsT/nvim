@@ -16,7 +16,7 @@ return {
        -- set up autocommand to trigger linting under certain events
        local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true }) -- create group
        
-       vim.api.nvim_create_autocmd({"BufEnter", "BufWritePost"}, {
+       vim.api.nvim_create_autocmd({"BufWritePost"}, {
            group = lint_augroup,
            callback = function()
                lint.try_lint() -- try linting

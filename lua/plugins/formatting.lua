@@ -10,12 +10,14 @@ return {
             formatters_by_ft = {
                 python = {"ruff_format"}, -- ruff formatter subcommand
                 fortran = {"findent"},
+                C = {"clang-format"},
             },
-            format_on_save = {
-                lsp_fallback = true, -- if formatter not available -> use LSP
-                async = false,
-                timeout_ms = 500,
-            }
+            -- for if you want automatic formatting on save
+            --format_on_save = {
+            --    lsp_fallback = true, -- if formatter not available -> use LSP
+            --    async = false,
+            --    timeout_ms = 500,
+            --}
         })
 
         -- set some keybindings

@@ -4,12 +4,17 @@ return {
     dependencies = {
         "hrsh7th/cmp-nvim-lsp", -- completion source for LSP recommendations in cmp
     },
+    opts = {
+        diagnostics = {
+            virtual_text = false,
+        }
+    },
     config = function()
         -- import lspconfig plugin
         local lspconfig = require("lspconfig")
         -- import cmp-nvim-lsp plugin
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
-        
+
         -- keymaps defined only when a language server attaches to a buffer
         -- Note: should be used below on all LSP configurations
         local on_attach = function(client, bufnr)
@@ -47,7 +52,8 @@ return {
         local cmp_capabilities = cmp_nvim_lsp.default_capabilities()
         
         -- change the diagnostic signals
-        local signs = { Error = "⮾ ", Warn = "⚠ ", Hint = "ⓘ ", Info = "🛈 "}
+        local signs = { Error = "", Warn = "", Hint = "", Info = ""}
+        -- local signs = { Error = "⮾ ", Warn = "⚠ ", Hint = "ⓘ ", Info = "🛈 "}
         for type, icon in pairs(signs) do
             local hl = "DiagnosticSign" .. type
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = ""})
@@ -67,6 +73,10 @@ return {
             }
         })
         lspconfig["fortls"].setup({ -- fortran LSP
+            capabilities = cmp_capabilities,
+            on_attach = on_attach,
+        })
+        lspconfig["clangd"].setup({ -- c/c++ LSP
             capabilities = cmp_capabilities,
             on_attach = on_attach,
         })

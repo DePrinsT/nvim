@@ -22,9 +22,6 @@ vim.cmd("set relativenumber") -- set relative line numbers
 vim.cmd("set nohlsearch") -- deactivate highlighting when searching
 vim.cmd("set incsearch") -- activate incremental search
 
--- MISCELLANEOUS SETTINGS --
-vim.cmd("set formatoptions-=cro") -- do not automatically make nextline a comment when writing a comment
-
 -- !!! KEYBINDINGS AND REMAPS !!!
 
 -- Note: the LSP keymaps are defined in the lspconfig.lua file
@@ -74,3 +71,6 @@ vim.keymap.set("n", "<leader>Y", "\"+Y") -- yy yank in normal mode
 -- MISCELLANEOUS SETTINGS
 vim.cmd("set updatetime=50") -- set fast upate time
 vim.cmd("set colorcolumn=80,120") -- colour columns at 80 and 120 characters to indicate lines getting too long
+vim.diagnostic.enable(false)  -- do not show diagnostics as text on the screen
+vim.cmd("autocmd BufRead * set formatoptions-=cro") -- do not make a new line after a comment automatically a comment
+
