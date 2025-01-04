@@ -71,13 +71,35 @@ return  {
                         ["]C"] = { query = "@class.outer", desc = "Next class definition end" },
                         ["]I"] = { query = "@conditional.outer", desc = "Next conditional end" },
                         ["]L"] = { query = "@loop.outer", desc = "Next loop end" },
-
-                        -- you can pass any type of query from the `queries/<lang>/<query_group>.scm` file
-                        ["]S"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
-                        ["]Z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
+                    },
+                    goto_previous_start = {
+                        ["[f"] = { query = "@call.outer", desc = "Previous function call start" },
+                        ["[m"] = { query = "@function.outer", desc = "Previous function/method definition start" },
+                        ["[c"] = { query = "@class.outer", desc = "Previous class definition start" },
+                        ["[i"] = { query = "@conditional.outer", desc = "Previous conditional start" },
+                        ["[l"] = { query = "@loop.outer", desc = "Previous loop start" },
+                    },
+                    goto_previous_end = {
+                        ["]F"] = { query = "@call.outer", desc = "Next function call end" },
+                        ["]M"] = { query = "@function.outer", desc = "Next function/method definition end" },
+                        ["]C"] = { query = "@class.outer", desc = "Next class definition end" },
+                        ["]I"] = { query = "@conditional.outer", desc = "Next conditional end" },
+                        ["]L"] = { query = "@loop.outer", desc = "Next loop end" },
                     },
                 },
             },
         })
+
+        -- set up repition of moves
+        local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
+        -- vim-way of repeating textobject moves
+        vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move)
+        vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_opposite)
+        -- make sure vim built-in f F t and T moves stay repeatable using ; and ,
+        vim.keymap.set({ "n", "x", "o" }, "f", ts_repeat_move.builtin_f_expr, {expr = true})
+        vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F_expr, {expr = true})
+        vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t_expr, {expr = true})
+        vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T_expr, {expr = true})
+
     end,
 }
