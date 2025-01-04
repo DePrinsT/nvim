@@ -13,6 +13,7 @@ return {
 
 			telescope.setup({
 				defaults = {
+					layout_strategy = "vertical", -- put things like preview vertically
 					mappings = {
 						i = {
 							["<C-k>"] = actions.move_selection_previous, -- move to prev result
