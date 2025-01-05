@@ -4,6 +4,11 @@
 vim.cmd("set termguicolors") -- add truecolour suport
 vim.cmd("colorscheme onedark") -- set colorscheme
 
+-- SOME CURSOR SETTINGS
+vim.cmd("set cursorline") -- set cursorline to be active
+vim.cmd("set cursorlineopt=number")  -- show only the line number
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#FFC900", bold = true }) -- make number yellow
+
 -- TAB SETTINGS
 vim.cmd("set tabstop=4") -- set tabs to be displayed as 4 spaces
 vim.cmd("set softtabstop=0") -- use same value as tabstop
@@ -73,4 +78,3 @@ vim.cmd("set updatetime=50") -- set fast upate time
 vim.cmd("set colorcolumn=80,120") -- colour columns at 80 and 120 characters to indicate lines getting too long
 vim.diagnostic.enable(false)  -- do not show diagnostics as text on the screen
 vim.cmd("autocmd BufRead * set formatoptions-=cro") -- do not make a new line after a comment automatically a comment
-
