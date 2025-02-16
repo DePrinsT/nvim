@@ -11,6 +11,7 @@ return {
                 python = {"ruff_format"}, -- ruff formatter subcommand
                 fortran = {"findent"},
                 C = {"clang-format"},
+                rust = {"rustfmt"},
             },
             -- for if you want automatic formatting on save
             --format_on_save = {

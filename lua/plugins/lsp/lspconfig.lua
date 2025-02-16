@@ -80,6 +80,17 @@ return {
             capabilities = cmp_capabilities,
             on_attach = on_attach,
         })
+        lspconfig["rust_analyzer"].setup({
+            capabilities = cmp_capabilities,
+            on_attach = on_attach,
+            settings = {
+                ["rust-analyzer"] = {
+                    diagnostics = {
+                        enable = false
+                    }
+                }
+            },
+        })
 
     end,
 }

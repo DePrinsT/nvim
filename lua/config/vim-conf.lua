@@ -6,7 +6,7 @@ vim.cmd("colorscheme onedark") -- set colorscheme
 
 -- SOME CURSOR SETTINGS
 vim.cmd("set cursorline") -- set cursorline to be active
-vim.cmd("set cursorlineopt=number")  -- show only the line number
+vim.cmd("set cursorlineopt=both")  -- show only the line number
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#FFC900", bold = true }) -- make number yellow
 
 -- TAB SETTINGS
