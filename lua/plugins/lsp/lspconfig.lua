@@ -91,6 +91,11 @@ return {
                 }
             },
         })
+        lspconfig["bashls"].setup({
+            capabilities = cmp_capabilities,
+            on_attach = on_attach,
+         })
+
 
     end,
 }
