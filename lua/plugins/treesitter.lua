@@ -18,6 +18,8 @@ return {
 							"fortran",
 							"c",
 							"cpp",
+							"julia",
+							"bash",
 							"vim",
 							"vimdoc",
 							"html",

@@ -10,8 +10,9 @@ return {
             formatters_by_ft = {
                 python = {"ruff_format"}, -- ruff formatter subcommand
                 fortran = {"findent"},
-                C = {"clang-format"},
+                c = {"clang-format"},
                 rust = {"rustfmt"},
+                tex = {"latexindent"},
             },
             -- for if you want automatic formatting on save
             --format_on_save = {
@@ -26,8 +27,8 @@ return {
         vim.keymap.set({"n", "v"}, "<leader>mp", function()
             conform.format({
                 lsp_fallback = true,
-                asyc = false,
-                timeout_ms = 50
+                asyc = true,
+                timeout_ms = 300
             })
         end, {desc = "Format file or range (in visual mode)"})
     end,
