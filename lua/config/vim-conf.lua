@@ -34,7 +34,8 @@ vim.cmd("set incsearch") -- activate incremental search
 
 -- some general master settings
 vim.g.mapleader = " " -- set leader to space
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- shortcut to get to file explorer
+-- KEYMAP OVERWRITEN BY OIL
+--vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- shortcut to get to file explorer
 
 -- some telescope shortcuts
 local tel_builtin = require("telescope.builtin")
