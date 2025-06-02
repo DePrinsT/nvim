@@ -95,7 +95,9 @@ return {
             capabilities = cmp_capabilities,
             on_attach = on_attach,
          })
-
-
+        lspconfig["cmake"].setup({
+            capabilities = cmp_capabilities,
+            on_attach = on_attach,
+        })
     end,
 }

@@ -20,6 +20,7 @@ return {
 			highlights = {
 				-- for c programming with include statements
 				["@keyword.import"] = { fmt = "italic"},
+				["@keyword.function"] = { fmt = "italic" },
 			},
 		})
 		onedark.load() -- load the theme
