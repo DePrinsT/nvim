@@ -21,10 +21,11 @@ return {
             -- LSP shortcuts
             vim.keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>",
             { desc = "Show LSP references", noremap = true, silent = true }) -- show definition, references
-            vim.keymap.set("n", "gD", vim.lsp.buf.declaration,
+            vim.keymap.set("n", "gd", vim.lsp.buf.declaration,
             { desc = "Go to declaration", noremap = true, silent = true }) -- go to declaration
-            vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>",
-            { desc = "Show LSP definitions", noremap = true, silent = true }) -- show lsp definitions
+            -- Since Neovim v0.11 this causes a deprecation warning
+            --vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>",
+            --{ desc = "Show LSP definitions", noremap = true, silent = true }) -- show lsp definitions
             vim.keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>",
             { desc = "Show LSP implementations", noremap = true, silent = true }) -- show lsp implementations
             vim.keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>",
