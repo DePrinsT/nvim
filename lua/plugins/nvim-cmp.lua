@@ -26,7 +26,7 @@ return {
         -- also sets extra keymaps to be used inside nvim-cmp
         cmp.setup({
             completion = {
-                completeopt = "menu,menuone,preview,noselect",
+                completeopt = "menu,preview,menuone,noselect",
             },
             snippet = {
                 expand = function(args)

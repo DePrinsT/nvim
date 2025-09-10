@@ -13,6 +13,7 @@ return {
                 c = {"clang-format"},
                 rust = {"rustfmt"},
                 tex = {"latexindent"},
+                cmake = {"cmake-format"},
             },
             -- for if you want automatic formatting on save
             --format_on_save = {

@@ -19,8 +19,11 @@ return {
     		},
 			highlights = {
 				-- for c programming with include statements
-				["@keyword.import"] = { fmt = "italic"},
-				["@keyword.function"] = { fmt = "italic" },
+				["@keyword.import"] = { fmt = "bold"},
+				["@keyword.function"] = { fmt = "bold,italic" },
+				["@keyword.repeat"] = { fmt = "bold,italic" },
+				["@keyword.conditional"] = { fmt = "bold,italic" },
+				["@keyword"] = { fmt = "bold" },
 			},
 		})
 		onedark.load() -- load the theme

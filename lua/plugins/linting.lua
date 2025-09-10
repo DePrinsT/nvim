@@ -11,6 +11,7 @@ return {
         -- NOTE: Ruff LSP already provides linting capabilities -> does not need to be duplicated
         lint.linters_by_ft = {
             python = {"ruff"},
+            cmake = {"cmakelint"},
         }
 
        -- set up autocommand to trigger linting under certain events

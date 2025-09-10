@@ -5,6 +5,9 @@ return {
     },
     config = function()
         require("oil").setup({
+            view_options = {
+                show_hidden=true,
+            },
             -- default keymaps to be used in the oil buffer
             keymaps = {
                 ["g?"] = { "actions.show_help", mode = "n" },
