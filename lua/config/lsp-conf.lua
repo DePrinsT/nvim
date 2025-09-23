@@ -48,17 +48,17 @@ for type, icon in pairs(signs) do
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
--- Custom server configurations if needed.
-vim.lsp.config("pyright", {
-    settings = {
-        python = {
-            analysis = {
-                typeCheckingMode = "off",
-                disableTaggedHints = true,
-            }
-        }
-    }
-})
+---- Custom server configurations if needed.
+--vim.lsp.config("pyright", {
+--    settings = {
+--        python = {
+--            analysis = {
+--                typeCheckingMode = "off",
+--                disableTaggedHints = true,
+--            }
+--        }
+--    }
+--})
 
 -- Activation of different language servers
 vim.lsp.enable({ "lua_ls", "pyright", "julials", "fortls", "clangd",
