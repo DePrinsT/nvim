@@ -2,7 +2,7 @@
 
 -- COLOUR SETTING
 vim.cmd("set termguicolors") -- add truecolour suport
-vim.cmd("colorscheme onedark") -- set colorscheme
+vim.cmd("colorscheme juliana") -- set colorscheme
 
 -- SOME CURSOR SETTINGS
 vim.cmd("set cursorline") -- set cursorline to be active
@@ -36,6 +36,7 @@ vim.cmd("set incsearch") -- activate incremental search
 vim.g.mapleader = " " -- set leader to space
 -- KEYMAP OVERWRITEN BY OIL
 --vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- shortcut to get to file explorer
+vim.api.nvim_set_keymap('n', '_', '0', {noremap = true, silent = true})  -- set jump beginning of line to _
 
 -- some telescope shortcuts
 local tel_builtin = require("telescope.builtin")
