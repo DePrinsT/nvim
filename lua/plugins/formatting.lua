@@ -6,7 +6,7 @@ return {
 
         -- set up which formatters to use for which type of files
         conform.setup({
-            -- define formatters
+            -- define formatters per programming language
             formatters_by_ft = {
                 python = {"ruff_format"}, -- ruff formatter subcommand
                 fortran = {"findent"},

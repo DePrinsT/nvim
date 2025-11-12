@@ -18,6 +18,7 @@ return {
                 vim.api.nvim_set_hl(0, "@lsp.typemod.function.defaultLibrary", { italic = false })
                 vim.api.nvim_set_hl(0, "@lsp.type.function.c", { fg = "#5c99d6", italic = false })
                 vim.api.nvim_set_hl(0, "@type.builtin", { fg = "#f9ae58" })
+                vim.api.nvim_set_hl(0, "@markup.heading", { fg = "#ec5f66", bold = true })
                 vim.api.nvim_set_hl(0, "@keyword.function.python", { fg = "#c695c6" })
             end,
         })
