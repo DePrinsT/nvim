@@ -4,16 +4,16 @@
 -- lastly, we add LSP capabilities to this config
 return {
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter", -- load only when going into insert mode
+    event = "InsertEnter",              -- load only when going into insert mode
     dependencies = {
-        "hrsh7th/cmp-nvim-lsp", -- cmp completion source for NVIM LSP related functionalities
-        "hrsh7th/cmp-buffer", -- cmp completion source for text in current open buffer
-        "hrsh7th/cmp-path", -- cmp completion source for paths in the file system
-        "L3MON4D3/LuaSnip", -- snippet engine written in Lua
-        "saadparwaiz1/cmp_luasnip", -- cmp completion source for serving code snippets
+        "hrsh7th/cmp-nvim-lsp",         -- cmp completion source for NVIM LSP related functionalities
+        "hrsh7th/cmp-buffer",           -- cmp completion source for text in current open buffer
+        "hrsh7th/cmp-path",             -- cmp completion source for paths in the file system
+        "L3MON4D3/LuaSnip",             -- snippet engine written in Lua
+        "saadparwaiz1/cmp_luasnip",     -- cmp completion source for serving code snippets
         "rafamadriz/friendly-snippets", -- set of useful snippets for various different languages
     },
-    config = function ()
+    config = function()
         local cmp = require("cmp")
         local luasnip = require("luasnip")
 
@@ -35,12 +35,12 @@ return {
             },
             -- keymaps
             mapping = cmp.mapping.preset.insert({
-                ["<C-k>"] = cmp.mapping.select_prev_item(), -- select previous suggestion
-                ["<C-j>"] = cmp.mapping.select_next_item(), -- select next suggestion
-                ["<C-b>"] = cmp.mapping.scroll_docs(-4), -- go backwards and forwards in preview window
+                ["<C-k>"] = cmp.mapping.select_prev_item(),         -- select previous suggestion
+                ["<C-j>"] = cmp.mapping.select_next_item(),         -- select next suggestion
+                ["<C-b>"] = cmp.mapping.scroll_docs(-4),            -- go backwards and forwards in preview window
                 ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-                ["<C-e>"] = cmp.mapping.abort(), -- close completion window
+                ["<C-Space>"] = cmp.mapping.complete(),             -- show completion suggestions
+                ["<C-e>"] = cmp.mapping.abort(),                    -- close completion window
                 ["<CR>"] = cmp.mapping.confirm({ select = false }), -- confirm selection
             }),
             -- activate sources for autocompletion
@@ -48,8 +48,8 @@ return {
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
                 { name = "luasnip" }, -- snippets
-                { name = "buffer" }, -- text within current buffer
-                { name = "path" }, -- file system paths
+                { name = "buffer" },  -- text within current buffer
+                { name = "path" },    -- file system paths
             }),
         })
     end,

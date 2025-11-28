@@ -2,6 +2,7 @@
 -- I make some of my own adaptions to the syntax highlighting below
 return {
     "kaiuri/nvim-juliana",
+    priority=1000,
     config = function()
         -- create a callback function so these adaptions are made as soon
         -- as the colorscheme is loaded

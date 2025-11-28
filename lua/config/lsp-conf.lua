@@ -49,6 +49,50 @@ for type, icon in pairs(signs) do
 end
 
 ---- Custom server configurations if needed.
+
+-- julials config to make it use the proper project environment (nvim-lspconfig)
+-- which you have to create yourself. also makes it recognise if there is a
+-- current package project in the directory as well to load it in properly
+-- Installation of environment can be done via e.g. 'julia --project=@nvim-lspconfig 
+-- -e 'import Pkg; Pkg.add(["LanguageServer", "PackageCompiler"]); using PackageCompiler;
+-- create_sysimage(:LanguageServer, sysimage_path=dirname(Pkg.Types.Context().env.project_file) *
+-- "/languageserver.so")'
+vim.lsp.config("julials", {
+    cmd = {
+        "julia",
+        "--project=".."~/.julia/environments/nvim-lspconfig/",
+        "--startup-file=no",
+        "--history-file=no",
+        "-e", [[
+            using Pkg
+            Pkg.instantiate()
+            using LanguageServer
+        depot_path = get(ENV, "JULIA_DEPOT_PATH", "")
+        project_path = let
+            dirname(something(
+                ## 1. Finds an explicitly set project (JULIA_PROJECT)
+                Base.load_path_expand((
+                    p = get(ENV, "JULIA_PROJECT", nothing);
+                        p === nothing ? nothing : isempty(p) ? nothing : p
+                    )),
+                        ## 2. Look for a Project.toml file in the current working directory,
+                        ##    or parent directories, with $HOME as an upper boundary
+                        Base.current_project(),
+                        ## 3. First entry in the load path
+                        get(Base.load_path(), 1, nothing),
+                        ## 4. Fallback to default global environment,
+                        ##    this is more or less unreachable
+                    Base.load_path_expand("@v#.#"),
+                ))
+            end
+                    @info "Running language server" VERSION pwd() project_path depot_path
+                    server = LanguageServer.LanguageServerInstance(stdin, stdout, project_path, depot_path)
+        server.runlinter = true
+            run(server)
+        ]]
+    }
+})
+
 --vim.lsp.config("pyright", {
 --    settings = {
 --        python = {
