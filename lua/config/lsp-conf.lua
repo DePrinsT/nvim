@@ -53,14 +53,14 @@ end
 -- julials config to make it use the proper project environment (nvim-lspconfig)
 -- which you have to create yourself. also makes it recognise if there is a
 -- current package project in the directory as well to load it in properly
--- Installation of environment can be done via e.g. 'julia --project=@nvim-lspconfig 
+-- Installation of environment can be done via e.g. 'julia --project=@nvim-lspconfig
 -- -e 'import Pkg; Pkg.add(["LanguageServer", "PackageCompiler"]); using PackageCompiler;
 -- create_sysimage(:LanguageServer, sysimage_path=dirname(Pkg.Types.Context().env.project_file) *
 -- "/languageserver.so")'
 vim.lsp.config("julials", {
     cmd = {
         "julia",
-        "--project=".."~/.julia/environments/nvim-lspconfig/",
+        "--project=" .. "~/.julia/environments/nvim-lspconfig/",
         "--startup-file=no",
         "--history-file=no",
         "-e", [[
@@ -90,7 +90,8 @@ vim.lsp.config("julials", {
         server.runlinter = true
             run(server)
         ]]
-    }
+    },
+    filetypes = { "julia" }, -- only activate on .jl file extensions
 })
 
 --vim.lsp.config("pyright", {

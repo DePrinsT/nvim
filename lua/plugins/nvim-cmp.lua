@@ -49,7 +49,12 @@ return {
                 { name = "nvim_lsp" },
                 { name = "luasnip" }, -- snippets
                 { name = "buffer" },  -- text within current buffer
-                { name = "path" },    -- file system paths
+                {
+                    name = "path",
+                    option = {
+                        keyword_pattern = "[./~][a-zA-Z0-9_/-]*"
+                    },
+                },
             }),
         })
     end,
